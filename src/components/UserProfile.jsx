@@ -1,13 +1,4 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  CardMedia,
-  Paper,
-  Typography,
-} from "@mui/material";
-import { useSelector } from "react-redux";
-import image from "../assets/tweetstorm.svg";
+import { Box, Paper, Typography } from "@mui/material";
 import Avatar from "../assets/avatar.svg";
 
 const UserProfile = ({ userProfile }) => {
@@ -24,7 +15,7 @@ const UserProfile = ({ userProfile }) => {
         }}
       >
         <Typography variant="h4">
-          Welcome{" "}
+          Welcome
           <Typography sx={{ fontSize: 30, fontWeight: 600 }} color="primary">
             {name}
           </Typography>
@@ -34,11 +25,7 @@ const UserProfile = ({ userProfile }) => {
         </Typography>
 
         <Box>
-          <img
-            src={Avatar}
-            alt="User Avatar"
-            className="image"
-          />
+          <img src={Avatar} alt="User Avatar" className="image" />
         </Box>
       </Box>
     </Paper>

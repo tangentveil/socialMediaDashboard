@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography, Grid, Paper, Box } from "@mui/material";
+import { Grid } from "@mui/material";
 import { useSelector } from "react-redux";
 import LikesCard from "./LikesCard";
 import FollowersCard from "./FollowersCard";

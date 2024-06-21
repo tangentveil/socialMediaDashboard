@@ -25,8 +25,8 @@ const UserCard = ({ userProfile }) => {
   };
 
   return (
-    <Paper elevation={8} sx={{ borderRadius: 2 }}>
-      <Box sx={{ padding: 2 }}>
+    <Paper elevation={8} sx={{ padding:2, borderRadius: 2, maxHeight: 356, overflowY: "scroll" }}>
+      <Box>
         <Typography variant="h6">Suggestions</Typography>
 
         <Box sx={{ margin: "auto" }}>

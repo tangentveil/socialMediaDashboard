@@ -1,27 +1,15 @@
 import React from "react";
 import {
-  Card,
-  CardContent,
   CardMedia,
   Grid,
   Typography,
   Box,
   Paper,
 } from "@mui/material";
-import svg from "../assets/tweetstorm.svg";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CommentIcon from "@mui/icons-material/Comment";
 
-const PostsDisplay = () => {
-  const post = {
-    title: "Sample Post Title",
-    datePosted: "June 20, 2024",
-    content: "This is a sample post content. It could be an image or text.",
-    likes: 123,
-    comments: 45,
-    media: svg,
-  };
-
+const PostsDisplay = ({ post, media, content }) => {
   return (
     <Paper elevation={8} sx={{ borderRadius: 2 }}>
       <Box sx={{ marginTop: 2, padding: 2 }}>
@@ -39,21 +27,23 @@ const PostsDisplay = () => {
         </Grid>
 
         <Box sx={{ marginY: 2 }}>
-          {post.media ? (
+          {media && (
             <CardMedia
               component="img"
-              image={post.media}
+              image={media}
               alt="Post Media"
-              sx={{ maxHeight: 400, objectFit: "cover" }}
+              sx={{objectFit: "cover", maxHeight: 526 }}
             />
-          ) : (
+          )}
+
+          {content && (
             <Typography variant="body1" component="p">
-              {post.content}
+              {content}
             </Typography>
           )}
         </Box>
 
-        <Grid container spacing={2} >
+        <Grid container spacing={2}>
           <Grid item>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <FavoriteBorderIcon

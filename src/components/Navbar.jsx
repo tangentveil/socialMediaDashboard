@@ -16,18 +16,8 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 
-import { SideMenu, ContentArea } from "../components";
-import {
-  Button,
-  Container,
-  Divider,
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-} from "@mui/material";
+import { SideMenu } from "../components";
+import { Drawer } from "@mui/material";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",

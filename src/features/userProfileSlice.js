@@ -1,9 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 import avatar from "../assets/avatar.svg";
+import PostImage from "../assets/postImage.jpg";
 
 const initialState = {
   name: "John Doe",
   bio: "Enthusiastic social media ninja. Coffee lover. Analyst.",
+  post: [
+    {
+      title: "Post Title",
+      datePosted: "June 20, 2024",
+      content: "This is a sample post content. It could be an image or text.",
+      likes: 123,
+      comments: 45,
+      media: PostImage,
+    },
+  ],
   users: [
     {
       id: 1,
