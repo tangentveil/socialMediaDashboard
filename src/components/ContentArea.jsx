@@ -15,7 +15,7 @@ const ContentArea = () => {
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <UserProfile />
+            <UserProfile userProfile={userProfile} />
           </Grid>
 
           <Grid item xs={12} md={8}>
@@ -24,7 +24,7 @@ const ContentArea = () => {
           </Grid>
 
           <Grid item xs={12} md={4}>
-            <UserCard />
+            <UserCard userProfile={userProfile} />
           </Grid>
         </Grid>
       </Box>

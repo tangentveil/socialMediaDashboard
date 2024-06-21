@@ -10,29 +10,34 @@ import { useSelector } from "react-redux";
 import image from "../assets/tweetstorm.svg";
 import Avatar from "../assets/avatar.svg";
 
-const UserProfile = () => {
-  const userProfile = useSelector((state) => state.userProfile);
+const UserProfile = ({ userProfile }) => {
+  const { name, bio } = userProfile;
 
   return (
     <Paper elevation={8} sx={{ borderRadius: 2 }}>
-      <Box sx={{ display: "flex", alignItems:"center", justifyContent:"space-between", padding: 2 }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: 2,
+        }}
+      >
         <Typography variant="h4">
           Welcome{" "}
           <Typography sx={{ fontSize: 30, fontWeight: 600 }} color="primary">
-            {userProfile.name}
+            {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Bio: {userProfile.bio}
+            Bio: {bio}
           </Typography>
         </Typography>
 
         <Box>
-          <CardMedia
-            component="img"
-            height="140"
-            image={Avatar}
+          <img
+            src={Avatar}
             alt="User Avatar"
-            sx={{ width: "140px" }}
+            className="image"
           />
         </Box>
       </Box>

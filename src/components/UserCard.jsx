@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import {
-  Card,
-  CardContent,
-  CardMedia,
   Typography,
   Button,
   Avatar,
@@ -13,45 +10,11 @@ import {
   Box,
   Paper,
 } from "@mui/material";
-import avatar from "../assets/avatar.svg";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import PersonIcon from "@mui/icons-material/Person";
 
-// Example user data
-const users = [
-  {
-    id: 1,
-    name: "John Doe",
-    avatar: avatar,
-    followed: false,
-  },
-  {
-    id: 2,
-    name: "Jane Smith",
-    avatar: avatar,
-    followed: true,
-  },
-  {
-    id: 3,
-    name: "Jane Smith",
-    avatar: avatar,
-    followed: true,
-  },
-  {
-    id: 4,
-    name: "Jane Smith",
-    avatar: avatar,
-    followed: true,
-  },
-  {
-    id: 5,
-    name: "Jane Smith",
-    avatar: avatar,
-    followed: false,
-  },
-  // Add more users as needed
-];
-
-const UserCard = () => {
-  const [userList, setUserList] = useState(users);
+const UserCard = ({ userProfile }) => {
+  const [userList, setUserList] = useState(userProfile.users);
 
   const handleFollowToggle = (id) => {
     setUserList((prevState) =>
@@ -82,10 +45,31 @@ const UserCard = () => {
                 />
                 <Button
                   variant="text"
-                  color={user.followed ? "secondary" : "primary"}
+                  // color={user.followed ? "secondary" : "primary"}
                   onClick={() => handleFollowToggle(user.id)}
+                  // sx={{ display: "flex", alignItems: "center", gap: 1 }}
                 >
-                  {user.followed ? "Unfollow" : "Follow"}
+                  {user.followed ? (
+                    <PersonIcon
+                      fontSize="small"
+                      sx={{
+                        backgroundColor: "#3f3d56",
+                        borderRadius: "50%",
+                        color: "white",
+                        padding: 1,
+                      }}
+                    />
+                  ) : (
+                    <PersonAddIcon
+                      fontSize="small"
+                      sx={{
+                        backgroundColor: "#6c63ff",
+                        borderRadius: "50%",
+                        color: "white",
+                        padding: 1,
+                      }}
+                    />
+                  )}
                 </Button>
               </ListItem>
             ))}

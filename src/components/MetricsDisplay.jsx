@@ -10,21 +10,28 @@ const MetricsDisplay = () => {
   const { likes, followers, posts } = metrics;
 
   return (
-    <Box>
-      <Grid container spacing={2}>
-        <Grid item xs={4}>
-          <LikesCard likes={likes} />
-        </Grid>
-
-        <Grid item xs={4}>
-          <FollowersCard followers={followers} />
-        </Grid>
-
-        <Grid item xs={4}>
-          <PostsCard posts={posts} />
-        </Grid>
+    <Grid
+      container
+      spacing={2}
+      sx={{
+        flexDirection: {
+          xs: "column",
+          sm: "row",
+        },
+      }}
+    >
+      <Grid item sm={4}>
+        <LikesCard likes={likes} />
       </Grid>
-    </Box>
+
+      <Grid item sm={4}>
+        <FollowersCard followers={followers} />
+      </Grid>
+
+      <Grid item sm={4}>
+        <PostsCard posts={posts} />
+      </Grid>
+    </Grid>
   );
 };
 

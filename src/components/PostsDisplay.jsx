@@ -9,6 +9,8 @@ import {
   Paper,
 } from "@mui/material";
 import svg from "../assets/tweetstorm.svg";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import CommentIcon from "@mui/icons-material/Comment";
 
 const PostsDisplay = () => {
   const post = {
@@ -51,14 +53,35 @@ const PostsDisplay = () => {
           )}
         </Box>
 
-        <Grid container spacing={2}>
-          <Grid item xs={6}>
-            <Typography variant="subtitle1">Likes</Typography>
-            <Typography variant="h5">{post.likes}</Typography>
+        <Grid container spacing={2} >
+          <Grid item>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <FavoriteBorderIcon
+                fontSize="small"
+                sx={{
+                  backgroundColor: "red",
+                  borderRadius: "50%",
+                  color: "white",
+                  padding: 1,
+                }}
+              />
+              <Typography variant="h5">{post.likes}</Typography>
+            </Box>
           </Grid>
-          <Grid item xs={6}>
-            <Typography variant="subtitle1">Comments</Typography>
-            <Typography variant="h5">{post.comments}</Typography>
+
+          <Grid item xs={2}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <CommentIcon
+                fontSize="small"
+                sx={{
+                  backgroundColor: "green",
+                  borderRadius: "50%",
+                  color: "white",
+                  padding: 1,
+                }}
+              />
+              <Typography variant="h5">{post.comments}</Typography>
+            </Box>
           </Grid>
         </Grid>
       </Box>
